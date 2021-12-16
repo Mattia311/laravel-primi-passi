@@ -18,5 +18,62 @@ Route::get('/homepage', function () {
    $hello = 'Hello World';
    $name = 'Mattia';
    $lastname = 'Villani';
-   return view('homepage', compact('name','lastname','hello'));
+   $data = [
+    "pagine" => [
+        "page1" => "pagina1",
+        "page2" => "pagina2",
+        "page3" => "pagina3",
+        "page4" => "pagina4",
+    ],
+];
+   return view('homepage', compact('name','lastname','hello'), $data);
+});
+
+
+Route::get('/pagina1', function () {
+    $data = [
+        "pagine" => [
+            "homepage" => "homepage",
+            "page2" => "pagina2",
+            "page3" => "pagina3",
+            "page4" => "pagina4",
+        ],
+    ];
+    return view('pagina1', $data);
+});
+
+Route::get('/pagina2', function () {
+    $data = [
+        "pagine" => [
+            "homepage" => "homepage",
+            "page1" => "pagina1",
+            "page3" => "pagina3",
+            "page4" => "pagina4",
+        ],
+    ];
+    return view('pagina2', $data);
+});
+
+Route::get('/pagina3', function () {
+    $data = [
+        "pagine" => [
+            "homepage" => "homepage",
+            "page1" => "pagina1",
+            "page2" => "pagina2",
+            "page4" => "pagina4",
+        ],
+    ];
+    return view('pagina3', $data);
+});
+
+Route::get('/pagina4', function () {
+    $data = [
+        "pagine" => [
+            "homepage" => "homepage",
+            "page1" => "pagina1",
+            "page2" => "pagina2",
+            "page3" => "pagina3",
+        ],
+    ];
+    return view('pagina4', $data);
 });

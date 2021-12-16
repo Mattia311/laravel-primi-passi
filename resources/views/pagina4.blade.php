@@ -7,7 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <nav>
+    <h1>Pagina 4</h1>
+    <header>
+        <nav>
             <ul>
                 @foreach ($pagine as $pagina)
                     @if ($pagina == '')
@@ -18,12 +20,7 @@
                 @endforeach
             </ul>
         </nav>
-    <div>
-        <h1>{{$hello}}</h1>
-
-        <p>{{$name}} {{$lastname}}</p>
-    </div>
-
+    </header>
     
 </body>
 </html>
